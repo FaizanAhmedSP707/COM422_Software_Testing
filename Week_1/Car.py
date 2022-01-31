@@ -14,13 +14,20 @@ class Car:
         self.maxSpeed = speed_lim_val
         self.fuelLevel = cur_fuel_qty
 
-    def accelerate(self):
-        self.currentSpeed += 1
-        self.fuelLevel -= 1
+    def accelerate(self, accel_by):
+        if self.fuelLevel > 0:
+            if self.currentSpeed + accel_by <= self.maxSpeed:
+                self.currentSpeed += accel_by
+                self.fuelLevel -= 1
+            else:
+                self.currentSpeed = self.maxSpeed
+            # Exit clause, returns from function when action above successfully completed
+            return True
+        print("Fuel level is at empty! Refuel first!")
+        return False
 
     def brake(self):
         self.currentSpeed -= 1
 
     def refuel(self):
         self.fuelLevel += 1
-
