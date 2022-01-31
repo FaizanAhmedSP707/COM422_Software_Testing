@@ -16,7 +16,9 @@ class Car:
 
     def accelerate(self, accel_by):
         if self.fuelLevel > 0:
+            # Above: Check related to Q5 of the Task for Week 1
             if self.currentSpeed + accel_by <= self.maxSpeed:
+                # Above: Check related to Q3 of the Task for Week 1
                 self.currentSpeed += accel_by
                 self.fuelLevel -= 1
             else:
