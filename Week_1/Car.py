@@ -33,7 +33,7 @@ class Car:
             # Above: Check related to Q4 of the Task for Week 1
             if self.currentSpeed - decel_by >= 0:
                 # Above: Check for Q2 of the Task for Week 1
-                self.currentSpeed -= decel_by
+                self.currentSpeed = self.currentSpeed - decel_by
             else:
                 print("The speed of the car cannot go below zero!")
                 self.currentSpeed = 0
