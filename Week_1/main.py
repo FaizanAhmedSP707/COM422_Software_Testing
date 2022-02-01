@@ -48,3 +48,19 @@ if __name__ == '__main__':
         else:
             print("Exiting loop, returning....")
             break
+
+    while True:
+        user_select_opt = input("Please select either car1 (type '1'), or car 2 (type '2') for refueling: ")
+        if user_select_opt == '1':
+            refuel_fuel_val_by = int(input("Please enter a value for which the speed of the car will decrease by:\n"))
+            car1.refuel(refuel_fuel_val_by)
+            print(f"Car 1's fuel quantity is {car1.fuelLevel} litres.")
+            break
+        elif user_select_opt == '2':
+            refuel_fuel_val_by = int(input("Please enter a value for which the speed of the car will decrease by:\n"))
+            car2.refuel(refuel_fuel_val_by)
+            print(f"Car 2's fuel quantity is {car2.fuelLevel} litres.")
+            break
+        else:
+            print("Exiting loop, returning....")
+            break
