@@ -42,5 +42,15 @@ class Car:
         print("The speed of the car is already at zero!")
         return False
 
-    def refuel(self):
-        self.fuelLevel += 1
+    def refuel(self, inc_fuel_val_by):
+        if self.fuelLevel < 100 or self.fuelLevel < 0:
+            # Above and below: Check related to Q6 of the Task for Week 1
+            if self.fuelLevel + inc_fuel_val_by <= 100:
+                self.fuelLevel += inc_fuel_val_by
+            else:
+                print("Cannot over-fuel the car!")
+                self.fuelLevel = 100
+            # Exit clause, returns from function when action above successfully completed
+            return True
+        print("Fuel level can't go in the negatives")
+        return False
