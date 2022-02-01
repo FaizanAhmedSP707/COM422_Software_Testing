@@ -28,8 +28,19 @@ class Car:
         print("Fuel level is at empty! Refuel first!")
         return False
 
-    def brake(self):
-        self.currentSpeed -= 1
+    def brake(self, decel_by):
+        if self.currentSpeed > 0:
+            # Above: Check related to Q4 of the Task for Week 1
+            if self.currentSpeed - decel_by >= 0:
+                # Above: Check for Q2 of the Task for Week 1
+                self.currentSpeed -= decel_by
+            else:
+                print("The speed of the car cannot go below zero!")
+                self.currentSpeed = 0
+            # Exit clause, returns from function when action above successfully completed
+            return True
+        print("The speed of the car is already at zero!")
+        return False
 
     def refuel(self):
         self.fuelLevel += 1
